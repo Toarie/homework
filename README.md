@@ -16,6 +16,8 @@ git clone <URL репозитория>
 
 cd project_name
 
+3. Установите зависимости:
+pip install -r requirements.txt
 
 ## Использование
 
@@ -47,3 +49,6 @@ print(sorted_data)  # [{'id': 2, 'state': 'CANCELED', 'date': '2022-01-02'}, {'i
 
 sorted_data = sort_by_date(data, descending=False)
 print(sorted_data)  # [{'id': 1, 'state': 'EXECUTED', 'date': '2022-01-03'}, {'id': 2, 'state': 'CANCELED', 'date': '2022-01-02'}]
+
+
+
