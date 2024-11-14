@@ -1,6 +1,7 @@
 from typing import List, Dict
 from datetime import datetime
 
+
 def filter_by_state(transactions: List[Dict[str, str]], state: str = 'EXECUTED') -> List[Dict[str, str]]:
     """
     Фильтрует список транзакций по статусу.
@@ -10,6 +11,7 @@ def filter_by_state(transactions: List[Dict[str, str]], state: str = 'EXECUTED')
     :return: отфильтрованный список транзакций
     """
     return [transaction for transaction in transactions if transaction.get('state') == state]
+
 
 def sort_by_date(transactions: List[Dict[str, str]], descending: bool = True) -> List[Dict[str, str]]:
     """
