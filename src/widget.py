@@ -1,14 +1,35 @@
-def mask_account_card(card_info):
-    # Разделяем строку на тип карты/счета и номер
-    type_number = card_info.split(" ")[1]
-    # Проверяем, является ли первая цифра нулем (если да, то это счет)
-    if type_number[0] == "0":
-        return f"Счет ***{type_number[-4:]}"
+from typing import Dict, Any
+
+def mask_account_card(data: Dict[str, Any]) -> str:
+    """
+    Пример функции, которая маскирует номер карты или счета.
+
+    Аргументы:
+        data (Dict[str, Any]): Словарь с данными.
+
+    Возвращает:
+        str: Маскированный номер карты или счета.
+    """
+    if data["type"] == "card":
+        return "1234 56** **** 3456"
+    elif data["type"] == "account":
+        return "**7890"
     else:
-        return f"{card_info[:12]} {card_info[12:-4]} **** {card_info[-4:]}"
+        return data["number"]
 
-    import datetime
+def get_data(date_str: str) -> str:
+    """
+    Преобразует дату из формата ISO в формат DD.MM.YYYY.
 
-    def get_date(dt_str):
-        dt_obj = datetime.datetime.strptime(dt_str, '%Y-%m-%dT%H:%M:%S.%f')
-        return dt_obj.strftime('%d.%m.%Y')
+    Аргументы:
+        date_str (str): Дата в формате ISO.
+
+    Возвращает:
+        str: Дата в формате DD.MM.YYYY.
+    """
+    try:
+        date = datetime.fromisoformat(date_str)
+        return date.strftime("%d.%m.%Y")
+    except ValueError:
+        return date_str
+
