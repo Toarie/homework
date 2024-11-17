@@ -47,3 +47,9 @@ print(sorted_data)  # [{'id': 2, 'state': 'CANCELED', 'date': '2022-01-02'}, {'i
 
 sorted_data = sort_by_date(data, descending=False)
 print(sorted_data)  # [{'id': 1, 'state': 'EXECUTED', 'date': '2022-01-03'}, {'id': 2, 'state': 'CANCELED', 'date': '2022-01-02'}]
+
+## Тестирование
+
+Для запуска тестов используйте команду:
+```sh
+pytest --cov=src tests/
