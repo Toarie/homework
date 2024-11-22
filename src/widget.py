@@ -1,5 +1,6 @@
 from typing import Dict, Any
 
+
 def mask_account_card(data: Dict[str, Any]) -> str:
     """
     Пример функции, которая маскирует номер карты или счета.
@@ -17,6 +18,7 @@ def mask_account_card(data: Dict[str, Any]) -> str:
     else:
         return data["number"]
 
+
 def get_data(date_str: str) -> str:
     """
     Преобразует дату из формата ISO в формат DD.MM.YYYY.
@@ -32,4 +34,3 @@ def get_data(date_str: str) -> str:
         return date.strftime("%d.%m.%Y")
     except ValueError:
         return date_str
-
