@@ -22,7 +22,10 @@ def get_mask_account(account_number: str) -> str:
     Возвращает:
         str: Маскированный номер счета.
     """
-    if len(account_number) >= 20:
-        return f"**{account_number[-4:]}"
-    return account_number
 
+    if len(account_number) == 20:
+        return f"**{account_number[-4:]}"
+    elif len(account_number) < 20:
+        return account_number
+    else:
+        return "invalid_account_number"
