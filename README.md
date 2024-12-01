@@ -70,3 +70,20 @@ descriptions = transaction_descriptions(transactions)
 
  for card_number in card_number_generator(1, 5):
     print(card_number)
+## Модуль `decorators`
+
+Модуль `decorators` содержит декораторы для различных задач, включая логирование выполнения функций.
+
+### Декоратор `log`
+
+Декоратор `log` автоматически логирует начало и конец выполнения функции, а также ее результаты или возникшие ошибки.
+
+#### Пример использования
+
+from decorators import log
+
+@log(filename="mylog.txt")
+def my_function(x, y):
+    return x + y
+
+my_function(1, 2)
