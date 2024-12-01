@@ -47,3 +47,26 @@ print(sorted_data)  # [{'id': 2, 'state': 'CANCELED', 'date': '2022-01-02'}, {'i
 
 sorted_data = sort_by_date(data, descending=False)
 print(sorted_data)  # [{'id': 1, 'state': 'EXECUTED', 'date': '2022-01-03'}, {'id': 2, 'state': 'CANCELED', 'date': '2022-01-02'}]
+
+## Модуль `generators`
+
+Модуль `generators` содержит функции для работы с массивами транзакций.
+
+### Функции
+
+- **filter_by_currency**: Фильтрует транзакции по заданной валюте.
+  usd_transactions = filter_by_currency(transactions, "USD")
+- 
+  for _ in range(2):
+      print(next(usd_transactions))
+- 
+**transaction_descriptions**: Возвращает описание каждой операции по очереди.
+descriptions = transaction_descriptions(transactions)
+
+ for _ in range(5):
+    print(next(descriptions))
+
+**card_number_generator**: Генерирует номера банковских карт в заданном диапазоне.
+
+ for card_number in card_number_generator(1, 5):
+    print(card_number)
