@@ -1,8 +1,11 @@
-import pytest
-from src.decorators import log
-import sys
-import os
 import logging
+import os
+import sys
+
+import pytest
+
+from src.decorators import log
+
 
 @pytest.fixture
 def clear_log_file(request):

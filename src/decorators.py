@@ -1,6 +1,7 @@
-import logging
 import functools
+import logging
 import sys
+
 
 def log(filename=None):
     def decorator(func):

@@ -1,6 +1,7 @@
 import json
 import os
 
+
 def read_json(file_path):
     """
     Reads a JSON file and returns a list of dictionaries with financial transactions.
